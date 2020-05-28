@@ -33,6 +33,8 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="Generador de contraseñas seguras">
     <title>Generador de contraseña</title>
     <style media="screen">
       html {
@@ -252,7 +254,7 @@
       }
       label {
         font-size: .8rem;
-        color: #9e9e9e
+        color: #0a0a0a
       }
       input:not([type]),input[type=text]:not(.browser-default),input[type=password]:not(.browser-default),input[type=email]:not(.browser-default),input[type=url]:not(.browser-default),input[type=time]:not(.browser-default),input[type=date]:not(.browser-default),input[type=datetime]:not(.browser-default),input[type=datetime-local]:not(.browser-default),input[type=tel]:not(.browser-default),input[type=number]:not(.browser-default),input[type=search]:not(.browser-default),textarea.materialize-textarea {
         background-color: transparent;
@@ -293,7 +295,7 @@
         left: .75rem
       }
       .input-field>label {
-        color: #9e9e9e;
+        color: #0a0a0a;
         position: absolute;
         top: 0;
         left: 0;
@@ -514,7 +516,7 @@
               <div class="card-content">
                 <div class="row">
                   <div class="input-field col s12">
-                    <input type="text" name="contraseña" value="<?php echo (isset($_POST['generar'])) ? $password : ''; ?>" readonly>
+                    <input type="text" name="contraseña" id="contraseña" value="<?php echo (isset($_POST['generar'])) ? $password : ''; ?>" readonly>
                     <label for="contraseña">Contraseña generada</label>
                   </div>
                   <div class="col s12 m6">
@@ -523,7 +525,9 @@
                       <label for="longitudMaxima">Longitud</label>
                     </div><br>
                     <p class="range-field col s6 m12">
-                      <input type="range" name="rangoMaximo" min="0" max="30" value="0" oninput="this.form.longitudMaxima.value=this.value">
+                      <label>
+                        <input type="range" name="rangoMaximo" min="0" max="30" value="0" oninput="this.form.longitudMaxima.value=this.value">
+                      </label>
                     </p>
                   </div>
                   <div class="col s12 m6">
