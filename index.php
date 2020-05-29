@@ -504,7 +504,12 @@
         -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2)
       }
-
+      .left {
+        float: left !important;
+      }
+      .right {
+        float: right !important;
+      }
     </style>
   </head>
   <body>
@@ -558,7 +563,14 @@
                   </div>
                 </div>
                 <div class="card-action">
-                  <button type="submit" name="generar" id="generar" disabled class="btn btn-large waves-effect waves-light">Generar</button>
+                  <div class="row">
+                    <div class="col s6">
+                      <button type="submit" name="generar" id="generar" disabled class="btn btn-large waves-effect waves-light">Generar</button>
+                    </div>
+                    <div class="col s6">
+                      <a onclick="copiar('contraseña')" class="btn btn-large right">Copiar</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -578,6 +590,14 @@
           else
             document.getElementById("generar").disabled = true;
         }
+      }
+      function copiar(id) {
+        var aux = document.createElement("input");
+        aux.setAttribute("value", document.getElementById(id).value);
+        document.body.appendChild(aux);
+        aux.select();
+        document.execCommand("copy");
+        document.body.removeChild(aux);
       }
     </script>
   </body>
