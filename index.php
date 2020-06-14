@@ -598,6 +598,7 @@
         aux.select();
         document.execCommand("copy");
         document.body.removeChild(aux);
+		alert('¡Contraseña copiada!');
       }
     </script>
   </body>
